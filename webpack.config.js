@@ -1,17 +1,17 @@
 const path = require("path");
+
 const configuration = {
-    entry: "./src/react/index.js",
-    mode: "development",
+    entry: './src/react/index.js',
+    mode: 'development',
     module: {
         rules: [
             {
-                test: /\.(js|jsx|ts|tsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     options: {
                         presets: [
-                            "@babel/preset-react"
+                            '@babel/preset-react'
                         ]
                     }
                 }
@@ -30,5 +30,5 @@ const configuration = {
     }
 }
 
-module.export = configuration;
+module.exports = configuration;
 
