@@ -1,6 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const containerElement = document.querySelector('#root');
+function App(){
+	return(
+		<div> 
+			<h1>Hello World</h1>
+		</div>
+	);
+}
 
-ReactDOM.render(<div>hello world</div>, containerElement)
+ReactDOM.render(
+	<React.StrictMode>
+	<App/>
+	</React.StrictMode>,
+	document.getElementById("root")
+);
