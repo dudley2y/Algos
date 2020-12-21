@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import GlobalStyle from "./globalStyles.js";
 
-import Header from "./Header.js";
+import Navbar from "./components/Navbar.js";
+import Stable_Matching from "./components/algorithms/stable_matching.js";
 
 function App(){
 	return(
 		<div> 
 			<GlobalStyle/>
-			<Header/>
+			<Navbar/>
+			<Stable_Matching/>
 		</div>
 	);
 }
