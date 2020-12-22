@@ -6,8 +6,8 @@ const useStyles = makeStyles((theme) => ({
 	  flexGrow: 1,
 	},
 	dynamic_name: {
-	  marginLeft: 25,
-	  marginRight: 25,
+	  marginLeft: 50,
+	  marginRight: 75,
 	},
 	menu: {
 		marginLeft: 0,
@@ -63,7 +63,7 @@ function Navbar(){
 			<AppBar position = "static">
 				<Toolbar>
 					<Typography variant="h6" color="inherit">MCS 401 Algorithms</Typography>
-					<Typography variant="h6" color="inherit" className = {classes.dynamic_name}>Something </Typography>
+					<Typography variant="h6" color="inherit" className = {classes.dynamic_name}>Stable Matching Problem</Typography>
 
 					<Button aria-controls="greedy-menu" aria-haspopup="true" onClick={handeClick}>Greedy Algorithms</Button>
 					<Menu id="greedy-menu" anchorEl = {greed_menu} keepMounted open={Boolean(greed_menu)} onClose={handleClose}>
@@ -74,7 +74,7 @@ function Navbar(){
 						<MenuItem onClick={handleClose}>Prim's Algorithm</MenuItem>
 					</Menu>
 
-					<Button aria-controls="divide-menu" aria-haspopup="true" onClick={handleDynamicClick}>Divide and Conquer Algorithms</Button>
+					<Button aria-controls="divide-menu" aria-haspopup="true" onClick={handleDynamicClick}>Divide and Conquer</Button>
 					<Menu id="divide-menu" anchorEl = {divide_menu} keepMounted open={Boolean(divide_menu)} onClose={handleDynamicClose}>
 						<MenuItem onClick={handleDivideClose}>MergeSort</MenuItem>
 						<MenuItem onClick={handleDivideClose}>Counting Inversions</MenuItem>

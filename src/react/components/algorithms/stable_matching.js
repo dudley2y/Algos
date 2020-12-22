@@ -1,83 +1,35 @@
 import React, { useState } from "react";
-import styled from "styled-components"; 
 import { ArcherContainer, ArcherElement } from "react-archer";
+import { Container, Typography, TextField, Button, makeStyles } from '@material-ui/core';
 
-const Container = styled.div`
-    width:100%;
-    height100%; 
-`
-
-const Left_div = styled.div`
-    height: 100%;
-    width: 50%;
-    position:fixed;
-    overflow-x:hidden;
-    padding-top: 20px;
-    left: 0;
-    text-align: center;
-`
-
-const Right_div = styled.div`
-    height: 100%;
-    width: 50%;
-    position:fixed;
-    overflow-x:hidden;
-    padding-top: 20px;
-    right: 0;
-    text-align: center;
-`
-
+const useStyles = makeStyles((theme) => ({
+    title: {
+        marginTop: 25,
+    },
+    submit: {
+        marginTop: 10,
+    }
+  }));
 
 function Stable_Matching(){
 
-    const [size, setSize]= useState(5);
+    const classes = useStyles();
+
+    const [size, setSize]= useState(2);
     
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-    }
-
-    const updateLeft = () => {
-        let nodes = [];
-        for(var i=0;i<size;i++){
-            nodes.push(
-                <ArcherElement id = "male + ${i}">
-                    <div>hi</div>
-                </ArcherElement>
-            );
-        }
-        return nodes;
-    }
-
     return(
-        <Container>
-
-            <form onSubmit = {handleSubmit}> 
-                <span>
-                    <p>Input size: 
-                            <input type = "text" onChange = {e => setSize(e.target.value)}></input>
-                            <button type = "submit">Submit</button>
-                    </p>
-                </span>
+        <Container fixed>
+            <Typography className = {classes.title} align="center" variant="h4" color="inherit">Stable Matching Problem</Typography>
+            <form noValidate autoComplete="off" align="center">
+                <TextField id="standard-basic" label="Number to match: " onChange = { e => setSize(e.target.value)}/>
+                <div>
+                    <Button className = {classes.submit} variant="contained" color="primary">Setup</Button>
+                </div>
             </form>
 
-
-            <ArcherContainer>
-
-                <Left_div id = "left">
-                    <h1></h1>
-                    {Array.from(Array(size)).map((x, index) =>
-                        <ArcherElement id = "male + ${index}" key = {index}> 
-                            <div>hi</div>
-                        </ArcherElement>)}
-                </Left_div>
-
-                <Right_div id = "right">
-                    {Array.from(Array(size)).map((x, index) =>
-                        <ArcherElement id = "female + ${index}" key = {index}> 
-                            <div>hi</div>
-                        </ArcherElement>)}
-                </Right_div>
-            </ArcherContainer>
+            <div>
+                
+            </div>
         </Container>
     );
 }
